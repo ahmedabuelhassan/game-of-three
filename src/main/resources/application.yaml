@@ -1,0 +1,22 @@
+# ===============================================
+# = Database config
+# ===============================================
+spring:
+  datasource:
+    url: jdbc:h2:mem:game;INIT=CREATE SCHEMA IF NOT EXISTS GAME_OF_THREE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    hikari:
+      schema: GAME_OF_THREE
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    defer-datasource-initialization: true
+
+logging:
+  level:
+    org:
+      hibernate: error
